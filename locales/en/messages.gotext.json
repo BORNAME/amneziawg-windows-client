@@ -609,13 +609,15 @@
             "id": "[EnumerationSeparator]",
             "message": "[EnumerationSeparator]",
             "translation": ", ",
-            "comment": "Text to insert between items when listing - most western languages will translate ‘[EnumerationSeparator]’ into ‘, ’ to produce lists like ‘apple, orange, strawberry’. Eastern languages might translate into ‘、’ to produce lists like ‘リンゴ、オレンジ、イチゴ’."
+            "comment": "Text to insert between items when listing - most western languages will translate ‘[EnumerationSeparator]’ into ‘, ’ to produce lists like ‘apple, orange, strawberry’. Eastern languages might translate into ‘、’ to produce lists like ‘リンゴ、オレンジ、イチゴ’.",
+            "fuzzy": true
         },
         {
             "id": "[UnitSeparator]",
             "message": "[UnitSeparator]",
             "translation": ", ",
-            "comment": "Text to insert when combining units of a measure - most languages will translate ‘[UnitSeparator]’ into ‘ ’ (space) to produce lists like ‘2 minuti 30 sekund’, or empty string ‘’ to produce ‘2分30秒’."
+            "comment": "Text to insert when combining units of a measure - most languages will translate ‘[UnitSeparator]’ into ‘ ’ (space) to produce lists like ‘2 minuti 30 sekund’, or empty string ‘’ to produce ‘2分30秒’.",
+            "fuzzy": true
         },
         {
             "id": "About AmneziaWG",
@@ -688,9 +690,9 @@
             "fuzzy": true
         },
         {
-            "id": "♥ \u0026Donate!",
-            "message": "♥ \u0026Donate!",
-            "translation": "♥ \u0026Donate!",
+            "id": "♥ &Donate!",
+            "message": "♥ &Donate!",
+            "translation": "♥ &Donate!",
             "translatorComment": "Copied from source.",
             "fuzzy": true
         },
@@ -702,16 +704,16 @@
             "fuzzy": true
         },
         {
-            "id": "\u0026Deactivate",
-            "message": "\u0026Deactivate",
-            "translation": "\u0026Deactivate",
+            "id": "&Deactivate",
+            "message": "&Deactivate",
+            "translation": "&Deactivate",
             "translatorComment": "Copied from source.",
             "fuzzy": true
         },
         {
-            "id": "\u0026Activate",
-            "message": "\u0026Activate",
-            "translation": "\u0026Activate",
+            "id": "&Activate",
+            "message": "&Activate",
+            "translation": "&Activate",
             "translatorComment": "Copied from source.",
             "fuzzy": true
         },
@@ -884,16 +886,16 @@
             "fuzzy": true
         },
         {
-            "id": "\u0026Name:",
-            "message": "\u0026Name:",
-            "translation": "\u0026Name:",
+            "id": "&Name:",
+            "message": "&Name:",
+            "translation": "&Name:",
             "translatorComment": "Copied from source.",
             "fuzzy": true
         },
         {
-            "id": "\u0026Public key:",
-            "message": "\u0026Public key:",
-            "translation": "\u0026Public key:",
+            "id": "&Public key:",
+            "message": "&Public key:",
+            "translation": "&Public key:",
             "translatorComment": "Copied from source.",
             "fuzzy": true
         },
@@ -905,9 +907,9 @@
             "fuzzy": true
         },
         {
-            "id": "\u0026Block untunneled traffic (kill-switch)",
-            "message": "\u0026Block untunneled traffic (kill-switch)",
-            "translation": "\u0026Block untunneled traffic (kill-switch)",
+            "id": "&Block untunneled traffic (kill-switch)",
+            "message": "&Block untunneled traffic (kill-switch)",
+            "translation": "&Block untunneled traffic (kill-switch)",
             "translatorComment": "Copied from source.",
             "fuzzy": true
         },
@@ -919,9 +921,9 @@
             "fuzzy": true
         },
         {
-            "id": "\u0026Save",
-            "message": "\u0026Save",
-            "translation": "\u0026Save",
+            "id": "&Save",
+            "message": "&Save",
+            "translation": "&Save",
             "translatorComment": "Copied from source.",
             "fuzzy": true
         },
@@ -933,9 +935,9 @@
             "fuzzy": true
         },
         {
-            "id": "\u0026Configuration:",
-            "message": "\u0026Configuration:",
-            "translation": "\u0026Configuration:",
+            "id": "&Configuration:",
+            "message": "&Configuration:",
+            "translation": "&Configuration:",
             "translatorComment": "Copied from source.",
             "fuzzy": true
         },
@@ -1075,23 +1077,23 @@
             "fuzzy": true
         },
         {
-            "id": "\u0026Copy",
-            "message": "\u0026Copy",
-            "translation": "\u0026Copy",
+            "id": "&Copy",
+            "message": "&Copy",
+            "translation": "&Copy",
             "translatorComment": "Copied from source.",
             "fuzzy": true
         },
         {
-            "id": "Select \u0026all",
-            "message": "Select \u0026all",
-            "translation": "Select \u0026all",
+            "id": "Select &all",
+            "message": "Select &all",
+            "translation": "Select &all",
             "translatorComment": "Copied from source.",
             "fuzzy": true
         },
         {
-            "id": "\u0026Save to file…",
-            "message": "\u0026Save to file…",
-            "translation": "\u0026Save to file…",
+            "id": "&Save to file…",
+            "message": "&Save to file…",
+            "translation": "&Save to file…",
             "translatorComment": "Copied from source.",
             "fuzzy": true
         },
@@ -1124,9 +1126,9 @@
             "fuzzy": true
         },
         {
-            "id": "\u0026About AmneziaWG…",
-            "message": "\u0026About AmneziaWG…",
-            "translation": "\u0026About AmneziaWG…",
+            "id": "&About AmneziaWG…",
+            "message": "&About AmneziaWG…",
+            "translation": "&About AmneziaWG…",
             "translatorComment": "Copied from source.",
             "fuzzy": true
         },
@@ -1217,23 +1219,23 @@
             "fuzzy": true
         },
         {
-            "id": "\u0026Manage tunnels…",
-            "message": "\u0026Manage tunnels…",
-            "translation": "\u0026Manage tunnels…",
+            "id": "&Manage tunnels…",
+            "message": "&Manage tunnels…",
+            "translation": "&Manage tunnels…",
             "translatorComment": "Copied from source.",
             "fuzzy": true
         },
         {
-            "id": "\u0026Import tunnel(s) from file…",
-            "message": "\u0026Import tunnel(s) from file…",
-            "translation": "\u0026Import tunnel(s) from file…",
+            "id": "&Import tunnel(s) from file…",
+            "message": "&Import tunnel(s) from file…",
+            "translation": "&Import tunnel(s) from file…",
             "translatorComment": "Copied from source.",
             "fuzzy": true
         },
         {
-            "id": "E\u0026xit",
-            "message": "E\u0026xit",
-            "translation": "E\u0026xit",
+            "id": "E&xit",
+            "message": "E&xit",
+            "translation": "E&xit",
             "translatorComment": "Copied from source.",
             "fuzzy": true
         },
@@ -1386,16 +1388,16 @@
             "fuzzy": true
         },
         {
-            "id": "\u0026Edit",
-            "message": "\u0026Edit",
-            "translation": "\u0026Edit",
+            "id": "&Edit",
+            "message": "&Edit",
+            "translation": "&Edit",
             "translatorComment": "Copied from source.",
             "fuzzy": true
         },
         {
-            "id": "Add \u0026empty tunnel…",
-            "message": "Add \u0026empty tunnel…",
-            "translation": "Add \u0026empty tunnel…",
+            "id": "Add &empty tunnel…",
+            "message": "Add &empty tunnel…",
+            "translation": "Add &empty tunnel…",
             "translatorComment": "Copied from source.",
             "fuzzy": true
         },
@@ -1421,30 +1423,30 @@
             "fuzzy": true
         },
         {
-            "id": "\u0026Toggle",
-            "message": "\u0026Toggle",
-            "translation": "\u0026Toggle",
+            "id": "&Toggle",
+            "message": "&Toggle",
+            "translation": "&Toggle",
             "translatorComment": "Copied from source.",
             "fuzzy": true
         },
         {
-            "id": "Export all tunnels to \u0026zip…",
-            "message": "Export all tunnels to \u0026zip…",
-            "translation": "Export all tunnels to \u0026zip…",
+            "id": "Export all tunnels to &zip…",
+            "message": "Export all tunnels to &zip…",
+            "translation": "Export all tunnels to &zip…",
             "translatorComment": "Copied from source.",
             "fuzzy": true
         },
         {
-            "id": "Edit \u0026selected tunnel…",
-            "message": "Edit \u0026selected tunnel…",
-            "translation": "Edit \u0026selected tunnel…",
+            "id": "Edit &selected tunnel…",
+            "message": "Edit &selected tunnel…",
+            "translation": "Edit &selected tunnel…",
             "translatorComment": "Copied from source.",
             "fuzzy": true
         },
         {
-            "id": "\u0026Remove selected tunnel(s)",
-            "message": "\u0026Remove selected tunnel(s)",
-            "translation": "\u0026Remove selected tunnel(s)",
+            "id": "&Remove selected tunnel(s)",
+            "message": "&Remove selected tunnel(s)",
+            "translation": "&Remove selected tunnel(s)",
             "translatorComment": "Copied from source.",
             "fuzzy": true
         },
