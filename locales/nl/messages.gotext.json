@@ -296,12 +296,13 @@
                 {
                     "id": "Bytes",
                     "string": "%[1]d",
-                    "type": "golang.zx2c4.com/wireguard/windows/conf.Bytes",
+                    "type": "github.com/amnezia-vpn/amneziawg-windows-client/conf.Bytes",
                     "underlyingType": "uint64",
                     "argNum": 1,
                     "expr": "b"
                 }
-            ]
+            ],
+            "fuzzy": true
         },
         {
             "id": "{Float64b__1024} KiB",
@@ -317,7 +318,8 @@
                     "argNum": 1,
                     "expr": "float64(b) / 1024"
                 }
-            ]
+            ],
+            "fuzzy": true
         },
         {
             "id": "{Float64b__1024__1024} MiB",
@@ -333,7 +335,8 @@
                     "argNum": 1,
                     "expr": "float64(b) / (1024 * 1024)"
                 }
-            ]
+            ],
+            "fuzzy": true
         },
         {
             "id": "{Float64b__1024__1024__1024} GiB",
@@ -349,7 +352,8 @@
                     "argNum": 1,
                     "expr": "float64(b) / (1024 * 1024 * 1024)"
                 }
-            ]
+            ],
+            "fuzzy": true
         },
         {
             "id": "{Float64b__1024__1024__1024__1024} TiB",
@@ -365,7 +369,8 @@
                     "argNum": 1,
                     "expr": "float64(b) / (1024 * 1024 * 1024) / 1024"
                 }
-            ]
+            ],
+            "fuzzy": true
         },
         {
             "id": "{Why}: {Offender}",
@@ -389,7 +394,8 @@
                     "argNum": 2,
                     "expr": "e.offender"
                 }
-            ]
+            ],
+            "fuzzy": true
         },
         {
             "id": "Invalid IP address",
@@ -565,7 +571,8 @@
             "id": "[EnumerationSeparator]",
             "message": "[EnumerationSeparator]",
             "translation": ", ",
-            "comment": "Text to insert between items when listing - most western languages will translate ‘[EnumerationSeparator]’ into ‘, ’ to produce lists like ‘apple, orange, strawberry’. Eastern languages might translate into ‘、’ to produce lists like ‘リンゴ、オレンジ、イチゴ’."
+            "comment": "Text to insert between items when listing - most western languages will translate ‘[EnumerationSeparator]’ into ‘, ’ to produce lists like ‘apple, orange, strawberry’. Eastern languages might translate into ‘、’ to produce lists like ‘リンゴ、オレンジ、イチゴ’.",
+            "fuzzy": true
         },
         {
             "id": "[UnitSeparator]",
@@ -586,9 +593,9 @@
             "translatorComment": "Copied from source."
         },
         {
-            "id": "App version: {Number}\nGo backend version: {WireGuardGoVersion}\nGo version: {Version_go}-{GOARCH}\nOperating system: {OsName}\nArchitecture: {NativeArch}",
-            "message": "App version: {Number}\nGo backend version: {WireGuardGoVersion}\nGo version: {Version_go}-{GOARCH}\nOperating system: {OsName}\nArchitecture: {NativeArch}",
-            "translation": "App-versie: {Number}\nGo backend versie: {WireGuardGoVersion}\nGo-versie: {Version_go}-{GOARCH}\nOperating system: {OsName}\nArchitecture: {NativeArch}",
+            "id": "App version: {Number}\nWintun version: {WintunVersion}\nGo version: {Version_go}\nOperating system: {OsName}\nArchitecture: {Arch}",
+            "message": "App version: {Number}\nWintun version: {WintunVersion}\nGo version: {Version_go}\nOperating system: {OsName}\nArchitecture: {Arch}",
+            "translation": "App version: {Number}\nWintun version: {WintunVersion}\nGo version: {Version_go}\nOperating system: {OsName}\nArchitecture: {Arch}",
             "translatorComment": "Copied from source.",
             "placeholders": [
                 {
@@ -600,12 +607,12 @@
                     "expr": "version.Number"
                 },
                 {
-                    "id": "WireGuardGoVersion",
+                    "id": "WintunVersion",
                     "string": "%[2]s",
                     "type": "string",
                     "underlyingType": "string",
                     "argNum": 2,
-                    "expr": "device.WireGuardGoVersion"
+                    "expr": "version.WintunVersion()"
                 },
                 {
                     "id": "Version_go",
@@ -616,30 +623,23 @@
                     "expr": "strings.TrimPrefix(runtime.Version(), \"go\")"
                 },
                 {
-                    "id": "GOARCH",
+                    "id": "OsName",
                     "string": "%[4]s",
                     "type": "string",
                     "underlyingType": "string",
                     "argNum": 4,
-                    "expr": "runtime.GOARCH"
+                    "expr": "version.OsName()"
                 },
                 {
-                    "id": "OsName",
+                    "id": "Arch",
                     "string": "%[5]s",
                     "type": "string",
                     "underlyingType": "string",
                     "argNum": 5,
-                    "expr": "version.OsName()"
-                },
-                {
-                    "id": "NativeArch",
-                    "string": "%[6]s",
-                    "type": "string",
-                    "underlyingType": "string",
-                    "argNum": 6,
-                    "expr": "version.NativeArch()"
+                    "expr": "version.Arch()"
                 }
-            ]
+            ],
+            "fuzzy": true
         },
         {
             "id": "Close",
@@ -657,7 +657,8 @@
             "id": "Status:",
             "message": "Status:",
             "translation": "Status:",
-            "translatorComment": "Copied from source."
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
         },
         {
             "id": "&Deactivate",
@@ -687,7 +688,8 @@
             "id": "MTU:",
             "message": "MTU:",
             "translation": "MTU:",
-            "translatorComment": "Copied from source."
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
         },
         {
             "id": "Addresses:",
@@ -699,12 +701,6 @@
             "id": "DNS servers:",
             "message": "DNS servers:",
             "translation": "DNS-servers:",
-            "translatorComment": "Copied from source."
-        },
-        {
-            "id": "Scripts:",
-            "message": "Scripts:",
-            "translation": "Scripts:",
             "translatorComment": "Copied from source."
         },
         {
@@ -726,6 +722,13 @@
             "translatorComment": "Copied from source."
         },
         {
+            "id": "Persistent keepalive:",
+            "message": "Persistent keepalive:",
+            "translation": "Persistent keepalive:",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
             "id": "Latest handshake:",
             "message": "Latest handshake:",
             "translation": "Recentste uitwisseling:",
@@ -735,12 +738,6 @@
             "id": "Transfer:",
             "message": "Transfer:",
             "translation": "Overdracht:",
-            "translatorComment": "Copied from source."
-        },
-        {
-            "id": "disabled, per policy",
-            "message": "disabled, per policy",
-            "translation": "uitgeschakeld, per beleid",
             "translatorComment": "Copied from source."
         },
         {
@@ -792,10 +789,41 @@
             "translatorComment": "Copied from source."
         },
         {
+            "id": "Interface: {Name}",
+            "message": "Interface: {Name}",
+            "translation": "Interface: {Name}",
+            "translatorComment": "Copied from source.",
+            "placeholders": [
+                {
+                    "id": "Name",
+                    "string": "%[1]s",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 1,
+                    "expr": "config.Name"
+                }
+            ],
+            "fuzzy": true
+        },
+        {
+            "id": "Peer",
+            "message": "Peer",
+            "translation": "Peer",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
             "id": "Create new tunnel",
             "message": "Create new tunnel",
             "translation": "Maak nieuwe tunnel",
             "translatorComment": "Copied from source."
+        },
+        {
+            "id": "Edit tunnel",
+            "message": "Edit tunnel",
+            "translation": "Edit tunnel",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
         },
         {
             "id": "&Name:",
@@ -820,6 +848,13 @@
             "message": "&Block untunneled traffic (kill-switch)",
             "translation": "&Ongetunneld verkeer blokkeren (kill-switch)",
             "translatorComment": "Copied from source."
+        },
+        {
+            "id": "When a configuration has exactly one peer, and that peer has an allowed IPs containing at least one of 0.0.0.0/0 or ::/0, then the tunnel service engages a firewall ruleset to block all traffic that is neither to nor from the tunnel interface, with special exceptions for DHCP and NDP.",
+            "message": "When a configuration has exactly one peer, and that peer has an allowed IPs containing at least one of 0.0.0.0/0 or ::/0, then the tunnel service engages a firewall ruleset to block all traffic that is neither to nor from the tunnel interface, with special exceptions for DHCP and NDP.",
+            "translation": "When a configuration has exactly one peer, and that peer has an allowed IPs containing at least one of 0.0.0.0/0 or ::/0, then the tunnel service engages a firewall ruleset to block all traffic that is neither to nor from the tunnel interface, with special exceptions for DHCP and NDP.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
         },
         {
             "id": "&Save",
@@ -1104,12 +1139,6 @@
             "translatorComment": "Copied from source."
         },
         {
-            "id": "&Tunnels",
-            "message": "&Tunnels",
-            "translation": "&Tunnels",
-            "translatorComment": "Copied from source."
-        },
-        {
             "id": "AmneziaWG Activated",
             "message": "AmneziaWG Activated",
             "translation": "AmneziaWG Geactiveerd",
@@ -1173,7 +1202,8 @@
                     "argNum": 1,
                     "expr": "textForState(globalState, true)"
                 }
-            ]
+            ],
+            "fuzzy": true
         },
         {
             "id": "Status: {StateText}",
@@ -1189,23 +1219,25 @@
                     "argNum": 1,
                     "expr": "stateText"
                 }
-            ]
+            ],
+            "fuzzy": true
         },
         {
-            "id": "Addresses: {EnumerationSeparator}",
-            "message": "Addresses: {EnumerationSeparator}",
-            "translation": "Addressen: {EnumerationSeparator}",
+            "id": "Addresses: {String}",
+            "message": "Addresses: {String}",
+            "translation": "Addresses: {String}",
             "translatorComment": "Copied from source.",
             "placeholders": [
                 {
-                    "id": "EnumerationSeparator",
+                    "id": "String",
                     "string": "%[1]s",
                     "type": "string",
                     "underlyingType": "string",
                     "argNum": 1,
-                    "expr": "strings.Join(addrs, l18n.EnumerationSeparator())"
+                    "expr": "sb.String()"
                 }
-            ]
+            ],
+            "fuzzy": true
         },
         {
             "id": "An Update is Available!",
@@ -1229,7 +1261,22 @@
             "id": "Tunnels",
             "message": "Tunnels",
             "translation": "Tunnels",
-            "translatorComment": "Copied from source."
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Ensure that you obtained the configuration file from a trusted source.",
+            "message": "Ensure that you obtained the configuration file from a trusted source.",
+            "translation": "Ensure that you obtained the configuration file from a trusted source.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Official Amnezia services are available only at amnezia.org.",
+            "message": "Official Amnezia services are available only at amnezia.org.",
+            "translation": "Official Amnezia services are available only at amnezia.org.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
         },
         {
             "id": "&Edit",
@@ -1283,12 +1330,6 @@
             "id": "&Remove selected tunnel(s)",
             "message": "&Remove selected tunnel(s)",
             "translation": "Geselecteerde tunnel(s) ve&rwijderen",
-            "translatorComment": "Copied from source."
-        },
-        {
-            "id": "no configuration files were found",
-            "message": "no configuration files were found",
-            "translation": "geen configuratiebestanden gevonden",
             "translatorComment": "Copied from source."
         },
         {
@@ -1616,10 +1657,44 @@
             "translatorComment": "Copied from source."
         },
         {
+            "id": "{Title} (unsigned build, no updates)",
+            "message": "{Title} (unsigned build, no updates)",
+            "translation": "{Title} (unsigned build, no updates)",
+            "translatorComment": "Copied from source.",
+            "placeholders": [
+                {
+                    "id": "Title",
+                    "string": "%[1]s",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 1,
+                    "expr": "mtw.Title()"
+                }
+            ],
+            "fuzzy": true
+        },
+        {
             "id": "Error Exiting AmneziaWG",
             "message": "Error Exiting AmneziaWG",
             "translation": "Fout bij afsluiten AmneziaWG",
             "translatorComment": "Copied from source."
+        },
+        {
+            "id": "Unable to exit service due to: {Err}. You may want to stop AmneziaWG from the service manager.",
+            "message": "Unable to exit service due to: {Err}. You may want to stop AmneziaWG from the service manager.",
+            "translation": "Unable to exit service due to: {Err}. You may want to stop AmneziaWG from the service manager.",
+            "translatorComment": "Copied from source.",
+            "placeholders": [
+                {
+                    "id": "Err",
+                    "string": "%[1]v",
+                    "type": "error",
+                    "underlyingType": "interface{Error() string}",
+                    "argNum": 1,
+                    "expr": "err"
+                }
+            ],
+            "fuzzy": true
         },
         {
             "id": "An update to AmneziaWG is available. It is highly advisable to update without delay.",
@@ -1638,6 +1713,13 @@
             "message": "Update Now",
             "translation": "Nu Bijwerken",
             "translatorComment": "Copied from source."
+        },
+        {
+            "id": "Status: Waiting for updater service",
+            "message": "Status: Waiting for updater service",
+            "translation": "Status: Waiting for updater service",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
         },
         {
             "id": "Error: {Err}. Please try again.",
@@ -1660,6 +1742,90 @@
             "message": "Status: Complete!",
             "translation": "Status: Voltooid!",
             "translatorComment": "Copied from source."
+        },
+        {
+            "id": "http2: Framer {F}: failed to decode just-written frame",
+            "message": "http2: Framer {F}: failed to decode just-written frame",
+            "translation": "http2: Framer {F}: failed to decode just-written frame",
+            "translatorComment": "Copied from source.",
+            "placeholders": [
+                {
+                    "id": "F",
+                    "string": "%[1]p",
+                    "type": "*net/http.http2Framer",
+                    "underlyingType": "*net/http.http2Framer",
+                    "argNum": 1,
+                    "expr": "f"
+                }
+            ],
+            "fuzzy": true
+        },
+        {
+            "id": "http2: Framer {F}: wrote {Http2summarizeFramefr}",
+            "message": "http2: Framer {F}: wrote {Http2summarizeFramefr}",
+            "translation": "http2: Framer {F}: wrote {Http2summarizeFramefr}",
+            "translatorComment": "Copied from source.",
+            "placeholders": [
+                {
+                    "id": "F",
+                    "string": "%[1]p",
+                    "type": "*net/http.http2Framer",
+                    "underlyingType": "*net/http.http2Framer",
+                    "argNum": 1,
+                    "expr": "f"
+                },
+                {
+                    "id": "Http2summarizeFramefr",
+                    "string": "%[2]v",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 2,
+                    "expr": "http2summarizeFrame(fr)"
+                }
+            ],
+            "fuzzy": true
+        },
+        {
+            "id": "http2: Framer {Fr}: read {Http2summarizeFramef}",
+            "message": "http2: Framer {Fr}: read {Http2summarizeFramef}",
+            "translation": "http2: Framer {Fr}: read {Http2summarizeFramef}",
+            "translatorComment": "Copied from source.",
+            "placeholders": [
+                {
+                    "id": "Fr",
+                    "string": "%[1]p",
+                    "type": "*net/http.http2Framer",
+                    "underlyingType": "*net/http.http2Framer",
+                    "argNum": 1,
+                    "expr": "fr"
+                },
+                {
+                    "id": "Http2summarizeFramef",
+                    "string": "%[2]v",
+                    "type": "string",
+                    "underlyingType": "string",
+                    "argNum": 2,
+                    "expr": "http2summarizeFrame(f)"
+                }
+            ],
+            "fuzzy": true
+        },
+        {
+            "id": "http2: decoded hpack field {HeaderField}",
+            "message": "http2: decoded hpack field {HeaderField}",
+            "translation": "http2: decoded hpack field {HeaderField}",
+            "translatorComment": "Copied from source.",
+            "placeholders": [
+                {
+                    "id": "HeaderField",
+                    "string": "%+[1]v",
+                    "type": "vendor/golang.org/x/net/http2/hpack.HeaderField",
+                    "underlyingType": "struct{Name string; Value string; Sensitive bool}",
+                    "argNum": 1,
+                    "expr": "hf"
+                }
+            ],
+            "fuzzy": true
         }
     ]
 }
