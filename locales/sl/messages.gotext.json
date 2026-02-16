@@ -331,7 +331,8 @@
                     "argNum": 1,
                     "expr": "b"
                 }
-            ]
+            ],
+            "fuzzy": true
         },
         {
             "id": "{Float64b__1024} KiB",
@@ -347,7 +348,8 @@
                     "argNum": 1,
                     "expr": "float64(b) / 1024"
                 }
-            ]
+            ],
+            "fuzzy": true
         },
         {
             "id": "{Float64b__1024__1024} MiB",
@@ -363,7 +365,8 @@
                     "argNum": 1,
                     "expr": "float64(b) / (1024 * 1024)"
                 }
-            ]
+            ],
+            "fuzzy": true
         },
         {
             "id": "{Float64b__1024__1024__1024} GiB",
@@ -379,7 +382,8 @@
                     "argNum": 1,
                     "expr": "float64(b) / (1024 * 1024 * 1024)"
                 }
-            ]
+            ],
+            "fuzzy": true
         },
         {
             "id": "{Float64b__1024__1024__1024__1024} TiB",
@@ -395,7 +399,8 @@
                     "argNum": 1,
                     "expr": "float64(b) / (1024 * 1024 * 1024) / 1024"
                 }
-            ]
+            ],
+            "fuzzy": true
         },
         {
             "id": "{Why}: {Offender}",
@@ -419,7 +424,8 @@
                     "argNum": 2,
                     "expr": "e.offender"
                 }
-            ]
+            ],
+            "fuzzy": true
         },
         {
             "id": "Invalid IP address",
@@ -595,7 +601,8 @@
             "id": "[EnumerationSeparator]",
             "message": "[EnumerationSeparator]",
             "translation": ", ",
-            "comment": "Text to insert between items when listing - most western languages will translate ‘[EnumerationSeparator]’ into ‘, ’ to produce lists like ‘apple, orange, strawberry’. Eastern languages might translate into ‘、’ to produce lists like ‘リンゴ、オレンジ、イチゴ’."
+            "comment": "Text to insert between items when listing - most western languages will translate ‘[EnumerationSeparator]’ into ‘, ’ to produce lists like ‘apple, orange, strawberry’. Eastern languages might translate into ‘、’ to produce lists like ‘リンゴ、オレンジ、イチゴ’.",
+            "fuzzy": true
         },
         {
             "id": "[UnitSeparator]",
@@ -616,9 +623,9 @@
             "translatorComment": "Copied from source."
         },
         {
-            "id": "App version: {Number}\nGo backend version: {WireGuardGoVersion}\nGo version: {Version_go}-{GOARCH}\nOperating system: {OsName}\nArchitecture: {NativeArch}",
-            "message": "App version: {Number}\nGo backend version: {WireGuardGoVersion}\nGo version: {Version_go}-{GOARCH}\nOperating system: {OsName}\nArchitecture: {NativeArch}",
-            "translation": "Verzija aplikacije: {Number}\nVerzija wireguard-go: {WireGuardGoVersion}\nVerzija Go: {Version_go}-{GOARCH}\nOperacijski sistem: {OsName}\nArhitektura: {NativeArch}",
+            "id": "App version: {Number}\nWintun version: {WintunVersion}\nGo version: {Version_go}\nOperating system: {OsName}\nArchitecture: {Arch}",
+            "message": "App version: {Number}\nWintun version: {WintunVersion}\nGo version: {Version_go}\nOperating system: {OsName}\nArchitecture: {Arch}",
+            "translation": "App version: {Number}\nWintun version: {WintunVersion}\nGo version: {Version_go}\nOperating system: {OsName}\nArchitecture: {Arch}",
             "translatorComment": "Copied from source.",
             "placeholders": [
                 {
@@ -630,12 +637,12 @@
                     "expr": "version.Number"
                 },
                 {
-                    "id": "WireGuardGoVersion",
+                    "id": "WintunVersion",
                     "string": "%[2]s",
                     "type": "string",
                     "underlyingType": "string",
                     "argNum": 2,
-                    "expr": "device.WireGuardGoVersion"
+                    "expr": "version.WintunVersion()"
                 },
                 {
                     "id": "Version_go",
@@ -646,30 +653,23 @@
                     "expr": "strings.TrimPrefix(runtime.Version(), \"go\")"
                 },
                 {
-                    "id": "GOARCH",
+                    "id": "OsName",
                     "string": "%[4]s",
                     "type": "string",
                     "underlyingType": "string",
                     "argNum": 4,
-                    "expr": "runtime.GOARCH"
+                    "expr": "version.OsName()"
                 },
                 {
-                    "id": "OsName",
+                    "id": "Arch",
                     "string": "%[5]s",
                     "type": "string",
                     "underlyingType": "string",
                     "argNum": 5,
-                    "expr": "version.OsName()"
-                },
-                {
-                    "id": "NativeArch",
-                    "string": "%[6]s",
-                    "type": "string",
-                    "underlyingType": "string",
-                    "argNum": 6,
-                    "expr": "version.NativeArch()"
+                    "expr": "version.Arch()"
                 }
-            ]
+            ],
+            "fuzzy": true
         },
         {
             "id": "Close",
@@ -687,7 +687,8 @@
             "id": "Status:",
             "message": "Status:",
             "translation": "Status:",
-            "translatorComment": "Copied from source."
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
         },
         {
             "id": "&Deactivate",
@@ -717,7 +718,8 @@
             "id": "MTU:",
             "message": "MTU:",
             "translation": "MTU:",
-            "translatorComment": "Copied from source."
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
         },
         {
             "id": "Addresses:",
@@ -729,12 +731,6 @@
             "id": "DNS servers:",
             "message": "DNS servers:",
             "translation": "Strežniki DNS:",
-            "translatorComment": "Copied from source."
-        },
-        {
-            "id": "Scripts:",
-            "message": "Scripts:",
-            "translation": "Skripta:",
             "translatorComment": "Copied from source."
         },
         {
@@ -771,36 +767,6 @@
             "id": "Transfer:",
             "message": "Transfer:",
             "translation": "Prenos:",
-            "translatorComment": "Copied from source."
-        },
-        {
-            "id": "pre-up",
-            "message": "pre-up",
-            "translation": "pred-aktivacijo",
-            "translatorComment": "Copied from source."
-        },
-        {
-            "id": "post-up",
-            "message": "post-up",
-            "translation": "po-aktivaciji",
-            "translatorComment": "Copied from source."
-        },
-        {
-            "id": "pre-down",
-            "message": "pre-down",
-            "translation": "pred-dezaktivacijo",
-            "translatorComment": "Copied from source."
-        },
-        {
-            "id": "post-down",
-            "message": "post-down",
-            "translation": "po-dezaktivaciji",
-            "translatorComment": "Copied from source."
-        },
-        {
-            "id": "disabled, per policy",
-            "message": "disabled, per policy",
-            "translation": "onemogočeno, zaradi politike",
             "translatorComment": "Copied from source."
         },
         {
@@ -910,10 +876,11 @@
             "translatorComment": "Copied from source."
         },
         {
-            "id": "When a configuration has exactly one peer, and that peer has an allowed IPs containing at least one of 0.0.0.0/0 or ::/0, then the tunnel service engages a firewall ruleset to block all traffic that is neither to nor from the tunnel interface or is to the wrong DNS server, with special exceptions for DHCP and NDP.",
-            "message": "When a configuration has exactly one peer, and that peer has an allowed IPs containing at least one of 0.0.0.0/0 or ::/0, then the tunnel service engages a firewall ruleset to block all traffic that is neither to nor from the tunnel interface or is to the wrong DNS server, with special exceptions for DHCP and NDP.",
-            "translation": "Kadar ima konfiguracija natanko enega vrstnika in njegov spisek dovoljenih IP-jev vsebuje vsaj enega izmed 0.0.0.0/0 ali ::/0, bo storitev tunela vzpostavila pravila požarnega zidu, ki bodo blokirala ves promet, ki ni niti za niti iz vmesnika tunela oz. za napačen strežnik DNS, s posebnimi izjemami za DHCP and NDP.",
-            "translatorComment": "Copied from source."
+            "id": "When a configuration has exactly one peer, and that peer has an allowed IPs containing at least one of 0.0.0.0/0 or ::/0, then the tunnel service engages a firewall ruleset to block all traffic that is neither to nor from the tunnel interface, with special exceptions for DHCP and NDP.",
+            "message": "When a configuration has exactly one peer, and that peer has an allowed IPs containing at least one of 0.0.0.0/0 or ::/0, then the tunnel service engages a firewall ruleset to block all traffic that is neither to nor from the tunnel interface, with special exceptions for DHCP and NDP.",
+            "translation": "When a configuration has exactly one peer, and that peer has an allowed IPs containing at least one of 0.0.0.0/0 or ::/0, then the tunnel service engages a firewall ruleset to block all traffic that is neither to nor from the tunnel interface, with special exceptions for DHCP and NDP.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
         },
         {
             "id": "&Save",
@@ -1198,12 +1165,6 @@
             "translatorComment": "Copied from source."
         },
         {
-            "id": "&Tunnels",
-            "message": "&Tunnels",
-            "translation": "&Tuneli",
-            "translatorComment": "Copied from source."
-        },
-        {
             "id": "AmneziaWG Activated",
             "message": "AmneziaWG Activated",
             "translation": "AmneziaWG aktiviran",
@@ -1267,7 +1228,8 @@
                     "argNum": 1,
                     "expr": "textForState(globalState, true)"
                 }
-            ]
+            ],
+            "fuzzy": true
         },
         {
             "id": "Status: {StateText}",
@@ -1283,23 +1245,25 @@
                     "argNum": 1,
                     "expr": "stateText"
                 }
-            ]
+            ],
+            "fuzzy": true
         },
         {
-            "id": "Addresses: {EnumerationSeparator}",
-            "message": "Addresses: {EnumerationSeparator}",
-            "translation": "Naslovi: {EnumerationSeparator}",
+            "id": "Addresses: {String}",
+            "message": "Addresses: {String}",
+            "translation": "Addresses: {String}",
             "translatorComment": "Copied from source.",
             "placeholders": [
                 {
-                    "id": "EnumerationSeparator",
+                    "id": "String",
                     "string": "%[1]s",
                     "type": "string",
                     "underlyingType": "string",
                     "argNum": 1,
-                    "expr": "strings.Join(addrs, l18n.EnumerationSeparator())"
+                    "expr": "sb.String()"
                 }
-            ]
+            ],
+            "fuzzy": true
         },
         {
             "id": "An Update is Available!",
@@ -1324,6 +1288,20 @@
             "message": "Tunnels",
             "translation": "Tuneli",
             "translatorComment": "Copied from source."
+        },
+        {
+            "id": "Ensure that you obtained the configuration file from a trusted source.",
+            "message": "Ensure that you obtained the configuration file from a trusted source.",
+            "translation": "Ensure that you obtained the configuration file from a trusted source.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
+        },
+        {
+            "id": "Official Amnezia services are available only at amnezia.org.",
+            "message": "Official Amnezia services are available only at amnezia.org.",
+            "translation": "Official Amnezia services are available only at amnezia.org.",
+            "translatorComment": "Copied from source.",
+            "fuzzy": true
         },
         {
             "id": "&Edit",
@@ -1377,12 +1355,6 @@
             "id": "&Remove selected tunnel(s)",
             "message": "&Remove selected tunnel(s)",
             "translation": "Odst&rani izbrane tunele",
-            "translatorComment": "Copied from source."
-        },
-        {
-            "id": "no configuration files were found",
-            "message": "no configuration files were found",
-            "translation": "ni najdenih konfiguracijskih datotek",
             "translatorComment": "Copied from source."
         },
         {
